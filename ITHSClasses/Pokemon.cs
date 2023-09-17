@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ITHSClasses.Enums;
+using System;
 using System.Collections.Generic;
 using System.Formats.Asn1;
 using System.Linq;
@@ -12,8 +13,11 @@ public class Pokemon
     private int _level;
 
     public string Name { get; private set; }
-    public PokeType Type { get; private set; }
-    public int Health { get; set; } = 100;
+    public PokemonType Type { get; private set; }
+    public int Health { get; set; }
+    public PokemonStats Stats { get; set; }
+
+    public string Emoji { get; private set; }
     public int Level
     { get { return _level; }
         set
@@ -26,11 +30,15 @@ public class Pokemon
         }
     }
 
-    public Pokemon(string name, PokeType type)
+    public Pokemon(PokemonTemplate template, int level)
     {
-        Name = name;
-        Type = type;
-        Level = 1;
+        Level = level;
+        Name = template.Name;
+        Type = template.Type;
+        Emoji = template.Emoji;
+        Stats = new PokemonStats(template.BaseStats, level);
+        Health = Stats.HealthPoints;
+
     }
 
     public void Attack(PokeAttack attack, Pokemon target)
@@ -57,15 +65,7 @@ public class Pokemon
     }
 }
 
-public enum PokeType
-{
-    Fire,
-    Water,
-    Grass,
-    Eletric,
-    Rock,
-    Psychic,
-}
+
 
 public enum PokeAttack
 {
