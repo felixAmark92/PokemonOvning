@@ -1,11 +1,6 @@
-﻿using ITHSClasses.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PokemonCommon.Enums;
 
-namespace ITHSClasses;
+namespace PokemonCommon;
 
 public class PokemonTemplate
 {
@@ -13,15 +8,16 @@ public class PokemonTemplate
     public readonly PokemonStats BaseStats;
     public readonly string Emoji;
     public readonly PokemonType Type;
-    public readonly PokemonType? SecondaryType;
+    public readonly PokemonType SecondaryType;
 
 
-    public PokemonTemplate(string name,  PokemonStats baseStats, string emoji, PokemonType type)
+    public PokemonTemplate(string name, PokemonStats baseStats, string emoji, PokemonType type)
     {
         Name = name;
         BaseStats = baseStats;
         Emoji = emoji;
         Type = type;
+        SecondaryType = type;
     }
     public PokemonTemplate(string name, PokemonStats baseStats, string emoji, PokemonType type, PokemonType secondaryType)
     {

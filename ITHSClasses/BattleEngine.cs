@@ -1,13 +1,8 @@
-﻿using ITHSClasses.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PokemonCommon.Enums;
 
 namespace ITHSClasses;
 
-internal static class Battle
+internal static class BattleEngine
 {
     private static readonly float[,] DAMAGE_MODIFIERS =
     {  // NOR   FIR   WAT   ELE   GRA   ICE   FIG   POI   GRO   FLY   PSY   BUG   ROC   GHO   DRA 

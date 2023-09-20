@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PokemonCommon.Pokemons;
 
-namespace ITHSClasses;
-internal class Trainer
+namespace PokemonCommon.Characters;
+public class Trainer
 {
     public string Name { get; private set; }
     public List<Pokemon> Pokemons { get; private set; }
@@ -27,7 +23,7 @@ internal class Trainer
         }
         else
         {
-            Console.WriteLine($"{Name} catched {poke.Name}");
+            Console.WriteLine($"{Name} catched {poke.Name} {poke.Emoji}");
             Pokemons.Add(poke);
         }
     }
@@ -39,7 +35,7 @@ internal class Trainer
         return pokemon;
     }
 
-    public  void BattleTrainer(Trainer trainer)
+    public void BattleTrainer(Trainer trainer)
     {
 
 
