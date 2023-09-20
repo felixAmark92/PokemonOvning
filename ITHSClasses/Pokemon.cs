@@ -52,13 +52,13 @@ public class Pokemon
                 Console.WriteLine($"{Name} used thunderbolt on {target.Name}");
                 target.Health -= 20;
                 break;
-
+            }
         }
     }
-}
 
 public enum PokeType
 {
+    Normal,
     Fire,
     Water,
     Grass,
