@@ -7,4 +7,3 @@ public enum Effectiveness
     Normal = 100,
     SuperEffective = 200,
 }
-

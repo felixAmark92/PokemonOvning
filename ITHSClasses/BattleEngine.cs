@@ -1,10 +1,10 @@
 ﻿using PokemonCommon.Enums;
 
-namespace ITHSClasses;
+namespace PokemonGame;
 
 internal static class BattleEngine
 {
-    private static readonly float[,] DAMAGE_MODIFIERS =
+    private static readonly float[,] DamageModifiers =
     {  // NOR   FIR   WAT   ELE   GRA   ICE   FIG   POI   GRO   FLY   PSY   BUG   ROC   GHO   DRA 
         { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.5f, 0.0f, 1.0f }, //NORMAL
 
@@ -37,5 +37,5 @@ internal static class BattleEngine
         { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 2.0f }, //DRAGON
     };
 
-    public static float GetDamageModifier(PokemonType attack, PokemonType defence) => DAMAGE_MODIFIERS[(int)attack, (int)defence];
+    public static float GetDamageModifier(PokemonType attack, PokemonType defense) => DamageModifiers[(int)attack, (int)defense];
 }
